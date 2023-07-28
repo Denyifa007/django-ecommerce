@@ -96,12 +96,13 @@
           </li>
          
           </ul>
-          <form class="d-flex input-group w-auto">
+          <form class="d-flex input-group w-auto" action="/search">
             <input
               type="search"
               class="form-control"
               placeholder="Search"
               aria-label="Search"
+              name="search"
             />
             <button
               class="btn btn-outline-dark"
@@ -131,10 +132,10 @@
             <li><a class="dropdown-item" href="{%  url 'logout' %}">Logout</a></li>
           </ul>
           <li class="nav-item mx-2">
-            <a href="#" class="nav-link text-white">Cart 4</a>
+            <a href="{%  url 'showcart' %}" class="nav-link text-white"> <span class="badge bg-danger">{%if totalitem > 0 %}{{totalitem}} {% endif %}</span>   Cart</a>
           </li>
           <li class="nav-item mx-2">
-            <a href="#" class="nav-link text-white">Wishlist 4</a>
+            <a href="#" class="nav-link text-white"><span class="badge bg-danger">{% if wishitem > 0 %} {{wishitem}} {% endif %}</span>  <i class="fa fa-heart"></i></a>
           </li>
           {% else %}
           <li class="nav-item mx-2">
@@ -170,9 +171,78 @@
     {% endblock payment-gateway %}
       
 
-    <footer class="container-fluid bg-primary text-center fixed-bottom text-light p-2 mt-5">
-      Copyright : 2023 || Develop by : Denzy Technology
-    </footer>
+    <!-- <footer class=" bg-primary text-center fixed-bottom text-light p-2 mt-5"> -->
+      <footer class=" container-fluid bg-primary  text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #3b5998;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f m-2"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #55acee;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter m-2"></i
+            ></a>
+      
+            <!-- Google -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #dd4b39;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google m-2"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #ac2bac;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram m-2"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #0082ca;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-linkedin-in m-2"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #333333;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-github m-2"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © Copyright : 2023 || Develop by : Denzy Technology
+          <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+        </div>
+        <!-- Copyright -->
+      </footer>
+   
+    <!-- </footer> -->
       
 
     <!-- MDB -->

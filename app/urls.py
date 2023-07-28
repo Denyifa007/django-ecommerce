@@ -19,13 +19,16 @@ urlpatterns = [
     
     path('add-to-cart/', views.add_to_cart, name= 'add-to-cart'),
     path('cart/', views.show_cart, name='showcart'),
+    # path('wishlist/', views.show_wishlist, name='showwishlist'),
     path('checkout/', views.checkout.as_view(), name='checkout'),
+    path("search/", views.search, name = 'search'),
    
     
     path('pluscart/', views.plus_cart),
     path('minuscart/', views.minus_cart),
     path('removecart/', views.remove_cart),
-    
+    path('pluswishlist/', views.plus_wishlist),
+    path('minuswishlist/', views.minus_wishlist),
     
     # login authentication
     path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),

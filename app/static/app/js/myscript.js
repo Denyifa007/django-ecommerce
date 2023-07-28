@@ -23,8 +23,8 @@
 // })
 
 $('.plus-cart').click(function(){    
-    var id=$(this).attr("pid").toString();
-    var eml=this.parentNode.children[2] 
+    const id=$(this).attr("pid").toString();
+    const eml=this.parentNode.children[2] 
     $.ajax({
         type:"GET",
         url:"/pluscart",
@@ -40,8 +40,8 @@ $('.plus-cart').click(function(){
 })
 
 $('.minus-cart').click(function(){
-    var id=$(this).attr("pid").toString();
-    var eml=this.parentNode.children[2] 
+    const id=$(this).attr("pid").toString();
+    const eml=this.parentNode.children[2] 
     $.ajax({
         type:"GET",
         url:"/minuscart",
@@ -58,8 +58,8 @@ $('.minus-cart').click(function(){
 
 
 $('.remove-cart').click(function(){
-    var id=$(this).attr("pid").toString();
-    var eml=this
+    const id=$(this).attr("pid").toString();
+    const eml=this
     $.ajax({
         type:"GET",
         url:"/removecart",
@@ -76,7 +76,7 @@ $('.remove-cart').click(function(){
 
 
 $('.plus-wishlist').click(function(){
-    var id=$(this).attr("pid").toString();
+    const id=$(this).attr("pid").toString();
     $.ajax({
         type:"GET",
         url:"/pluswishlist",
@@ -92,7 +92,7 @@ $('.plus-wishlist').click(function(){
 
 
 $('.minus-wishlist').click(function(){
-    var id=$(this).attr("pid").toString();
+    const id=$(this).attr("pid").toString();
     $.ajax({
         type:"GET",
         url:"/minuswishlist",
@@ -101,6 +101,35 @@ $('.minus-wishlist').click(function(){
         },
         success:function(data){
             window.location.href = `http://localhost:8000/product-detail/${id}`
+        }
+    })
+})
+
+$('plus-wishlist').click(function(){
+    const id=$(this).attr("pid").toString();
+    $.ajax({
+        type:"GET",
+        url: "/pluswishlist",
+        data:{
+            prod_id:id
+        },
+        success:function(data){
+            //alert(data.message)
+            window.location.href = 'http://localhost:8000/product-detail/${id}'
+        }
+    })
+})
+$('plus-wishlist').click(function(){
+    const id=$(this).attr("pid").toString();
+    $.ajax({
+        type:"GET",
+        url: "/minuswishlist",
+        data:{
+            prod_id:id
+        },
+        success:function(data){
+            //alert(data.message)
+            window.location.href = 'http://localhost:8000/product-detail/${id}'
         }
     })
 })
